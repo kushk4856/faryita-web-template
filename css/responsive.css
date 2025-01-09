@@ -1,0 +1,81 @@
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .juice-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .featured-juice {
+        grid-template-columns: 1fr;
+    }
+
+    .juice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .juice-card {
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .nav-icons {
+        gap: 0.5rem;
+    }
+
+    .get-in-touch {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .juice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .top-header {
+        display: none;
+    }
+
+    .marquee-item span {
+        font-size: 14px;
+    }
+
+    .marquee-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .juice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .juice-card h2 {
+        font-size: 2rem;
+    }
+}
