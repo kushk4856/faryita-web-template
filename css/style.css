@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -405,7 +407,7 @@ nav {
 }
 
 .trending-header {
-    background: #E6F0FF;
+    background: #C0DBF7;
     padding: 1rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -414,9 +416,14 @@ nav {
 
 .trending-header h2 {
     color: #4574A5;
-    font-size: 3rem;
-    font-weight: 700;
-    margin: 0;
+
+    font-family: Anton;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 55px;
+    /* 91.667% */
+    text-transform: capitalize;
 }
 
 .trending-grid {
@@ -446,7 +453,7 @@ nav {
     /* width: 150px; */
     height: 290px;
     /* margin: 0 auto 1rem; */
-    background: #E8F3E8;
+    background: #D6E4C6;
     /* border-radius: 50%; */
     display: flex;
     align-items: center;
@@ -560,12 +567,13 @@ nav {
 
 .info-details h2 {
     color: #FFF;
-    /* font-family: Anton; */
+
+    font-family: Anton;
     font-size: 60px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: 55px;
-    /* 91.667% */
+
     text-transform: capitalize;
     padding-block: 50px;
 }
@@ -647,8 +655,16 @@ nav {
 }
 
 .section-title {
-    color: #e75f5f;
-    font-size: 32px;
+    color: #C7655D;
+
+
+    font-family: Anton;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 55px;
+
+    text-transform: capitalize;
     margin-bottom: 30px;
 }
 
@@ -671,8 +687,19 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 16px;
-    color: #333;
+    /* font-size: 16px; */
+    /* color: #333; */
+    color: #060F11;
+    padding-bottom: 32px;
+
+    /* Button */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 13px;
+    /* 72.222% */
+    text-transform: capitalize;
 }
 
 .accordion-button::after {
@@ -693,8 +720,18 @@ nav {
 }
 
 .accordion-content p {
-    margin-bottom: 15px;
-    line-height: 1.6;
+    color: #494949;
+
+
+    /* font-family: Poppins; */
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    /* line-height: 1.6; */
 }
 
 /* Chefs Section */
@@ -761,6 +798,7 @@ nav {
 @media (max-width: 768px) {
     .faq-section {
         flex-direction: column-reverse;
+        padding-inline: 0px;
     }
 
     .faq-image {

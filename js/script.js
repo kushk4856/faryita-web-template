@@ -139,13 +139,21 @@ startSlider(sliderLogo, "forward");
 // Accordion functionality
 const accordionButtons = document.querySelectorAll(".accordion-button");
 
+accordionButtons[0].classList.add("active");
+accordionButtons[0].nextElementSibling.style.maxHeight =
+  accordionButtons[0].nextElementSibling.scrollHeight + "px";
+
 accordionButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const currentContent = button.nextElementSibling;
     const isActive = button.classList.contains("active");
 
     // Close all accordions
-    accordionButtons.forEach((btn) => {
+    accordionButtons.forEach((btn, i) => {
+      // if (i !== 0) {
+      //   btn.classList.remove("active");
+      //   btn.nextElementSibling.style.maxHeight = null;
+      // }
       btn.classList.remove("active");
       btn.nextElementSibling.style.maxHeight = null;
     });
