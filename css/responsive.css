@@ -60,6 +60,47 @@
         width: 60px;
         height: 60px;
     }
+
+    .category_inner {
+        flex-direction: column;
+    }
+
+    .category_inner .category_cards {
+        width: 100%;
+        height: auto;
+    }
+
+    .trending-grid {
+        gap: 50px;
+    }
+
+    .accordion-button {
+        line-height: normal;
+        font-size: 15px;
+        padding-bottom: 10px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 0px;
+    }
+
+    .accordion-content p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .features {
+        gap: 40px;
+    }
+
+    .feature-item {
+        border-right: none;
+    }
+
+    .chefs-grid {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 576px) {
@@ -77,5 +118,33 @@
 
     .juice-card h2 {
         font-size: 2rem;
+    }
+
+    .info-details h2 {
+        font-size: 40px;
+        line-height: normal;
+        padding-top: 28px;
+        padding-bottom: 0px;
+    }
+
+    .info-section {
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        z-index: 3;
+    }
+
+    .info-section::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: #83C5BE;
+        opacity: .3;
+        z-index: -1;
+        border-radius: 30px;
     }
 }

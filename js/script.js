@@ -165,3 +165,103 @@ accordionButtons.forEach((button) => {
     }
   });
 });
+
+// ====blog slider ================
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize carousel with unique IDs
+  const juiceCarouselInit = () => {
+    const track = document.getElementById("juiceBlogTrack");
+    const cards = track.querySelectorAll(".juice-blog-card");
+    const dotsContainer = document.getElementById("juiceBlogDots");
+    const cardWidth = cards[0].offsetWidth + 20; // Including gap
+    let currentIndex = 0;
+    let startX,
+      isDragging = false,
+      startPos;
+
+    // Calculate number of slides to show
+    const slidesPerView = window.innerWidth > 992 ? 2 : 1;
+    const totalSlides = Math.ceil(cards.length / slidesPerView);
+
+    // Create dots
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("juice-blog-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => goToSlide(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateDots() {
+      const dots = dotsContainer.querySelectorAll(".juice-blog-dot");
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      const offset = -index * (cardWidth * slidesPerView);
+      track.style.transform = `translateX(${offset}px)`;
+      updateDots();
+    }
+
+    // Auto-play functionality
+    let autoplayInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      goToSlide(currentIndex);
+    }, 3000);
+
+    // Touch events for mobile
+    track.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      startPos = -currentIndex * (cardWidth * slidesPerView);
+      clearInterval(autoplayInterval);
+    });
+
+    track.addEventListener("touchmove", (e) => {
+      if (!isDragging) return;
+      const currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      track.style.transform = `translateX(${startPos + diff}px)`;
+    });
+
+    track.addEventListener("touchend", (e) => {
+      isDragging = false;
+      const endX = e.changedTouches[0].clientX;
+      const diff = endX - startX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0 && currentIndex > 0) {
+          currentIndex--;
+        } else if (diff < 0 && currentIndex < totalSlides - 1) {
+          currentIndex++;
+        }
+      }
+
+      goToSlide(currentIndex);
+      autoplayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        goToSlide(currentIndex);
+      }, 5000);
+    });
+
+    return { track, cardWidth, slidesPerView };
+  };
+
+  // Initialize carousel
+  const carousel = juiceCarouselInit();
+
+  // Window resize handler
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const newSlidesPerView = window.innerWidth > 992 ? 2 : 1;
+      if (newSlidesPerView !== carousel.slidesPerView) {
+        location.reload();
+      }
+    }, 250);
+  });
+});

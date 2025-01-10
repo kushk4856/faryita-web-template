@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -414,6 +414,14 @@ nav {
     border-radius: 10px;
 }
 
+.trending-header.blog {
+    background: #FE8F00;
+}
+
+.trending-header.blog h2 {
+    color: #fff;
+}
+
 .trending-header h2 {
     color: #4574A5;
 
@@ -702,14 +710,15 @@ nav {
     text-transform: capitalize;
 }
 
-.accordion-button::after {
-    content: "+";
-    font-size: 20px;
-    transition: transform 0.3s ease;
+.accordion-button img {
+    margin-top: 6px;
+    align-self: flex-start;
+    transition: transform 0.5s ease;
 }
 
-.accordion-button.active::after {
-    transform: rotate(45deg);
+
+.accordion-button.active img {
+    transform: rotate(180deg);
 }
 
 .accordion-content {
@@ -737,15 +746,38 @@ nav {
 /* Chefs Section */
 .chefs-section {
     background-color: #ffd1dc;
-    padding: 40px 20px;
+    padding: 75px 55px;
     border-radius: 15px;
 }
 
+.chefs_heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0px 59px 0;
+}
+
+.chefs_heading p {
+    width: 45%;
+    color: #3D3D3D;
+
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    text-transform: capitalize;
+}
+
 .chefs-title {
-    color: #333;
-    font-size: 32px;
+    color: #AE5263;
+
+    font-family: Anton;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 55px;
+    text-transform: capitalize;
     margin-bottom: 30px;
-    text-align: center;
 }
 
 .chefs-grid {
@@ -758,24 +790,54 @@ nav {
 .chef-card {
     flex: 1;
     min-width: 200px;
-    max-width: 250px;
+    /* max-width: 250px; */
     text-align: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    background-color: #FFA6AB;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    padding-top: 32px;
+    position: relative;
+
+}
+
+.chef-card::before {
+    position: absolute;
+    content: '';
+    background-image: url(../images/bg-images/strow.png);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: all .3s ease-in-out;
 }
 
 .chef-card:hover {
+    box-shadow: rgba(174, 82, 99, 0.4) 5px 5px, rgba(174, 82, 99, 0.3) 10px 10px, rgba(174, 82, 99, 0.2) 15px 15px, rgba(174, 82, 99, 0.1) 20px 20px, rgba(174, 82, 99, 0.05) 25px 25px;
     transform: translateY(-5px);
 }
 
+.chef-card:hover.chef-card::before {
+    opacity: 1;
+}
+
+.chef-card .social_icons img {
+    width: 30px;
+    height: 30px;
+}
+
 .chef-image {
-    width: 120px;
+    /* width: 120px;
     height: 120px;
-    border-radius: 50%;
+    border-radius: 50%; */
     margin: 0 auto 15px;
     overflow: hidden;
+    mask-image: url('../images/icons/team-bg.svg');
+    -webkit-mask-size: contain;
+    -webkit-mask-position: center center;
+    -webkit-mask-repeat: no-repeat;
 }
 
 .chef-image img {
@@ -785,15 +847,316 @@ nav {
 }
 
 .chef-name {
-    font-size: 18px;
+    color: #000;
+
+    text-align: center;
+    font-family: Poppins;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
     margin-bottom: 5px;
-    color: #333;
 }
 
 .chef-title {
-    font-size: 14px;
-    color: #666;
+    color: #000;
+
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    /* 125% */
+    text-transform: capitalize;
 }
+
+
+/* Blog Section */
+.juice-blog-section {
+    margin-block: 50px;
+    margin-inline: 16px;
+    padding-inline: 44px;
+}
+
+.juice-blog-title {
+    background: #ff8c00;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Custom Carousel Styles */
+.juice-blog-carousel {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+
+.juice-blog-track {
+    display: flex;
+    transition: transform 0.9s ease-in-out;
+    gap: 20px;
+}
+
+.juice-blog-card {
+    min-width: calc(50% - 10px);
+    display: flex;
+    height: 450px;
+    border-radius: 15px;
+    overflow: hidden;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+}
+
+.juice-blog-image {
+    width: 53%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.blog_right_block {
+    /* background: #87AD1D; */
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 30px 5px;
+}
+
+.juice-blog-card:nth-child(odd) .blog_right_block {
+    background: #87AD1D;
+}
+
+
+.juice-blog-card:nth-child(even) .blog_right_block {
+    background: #C7655D;
+
+}
+
+.juice-blog-content {
+    /* width: 50%; */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.juice-blog-card:nth-child(odd) .juice-blog-content {
+    background: #87AD1D;
+}
+
+.juice-blog-card:nth-child(even) .juice-blog-content {
+    background: #C7655D;
+}
+
+.juice-blog-date {
+    color: #FFF;
+
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 12px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.juice-blog-heading {
+    color: #FFF;
+    font-family: Anton;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px;
+    /* 125% */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.juice-blog-excerpt {
+    color: #FFF;
+
+    /* Body Text */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    /* 175% */
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.juice-blog-read-more {
+    display: inline-block;
+    font-family: Inter;
+    background: #FFC527;
+    color: black;
+    padding: 19px 47px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    align-self: flex-start;
+    line-height: 15px;
+}
+
+/* Custom Dots */
+.juice-blog-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.juice-blog-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.juice-blog-dot.active {
+    background: #ff8c00;
+}
+
+
+/* Contact Section */
+.juice-contact-section {
+    background: #ffb300;
+    margin-inline: 16px;
+    border-radius: 25px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.juice-contact-content {
+    width: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.juice-contact-title {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+.juice-contact-subtitle {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.juice-contact-form {
+    width: 100%;
+}
+
+.juice-form-group {
+    margin-bottom: 15px;
+}
+
+.juice-form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+}
+
+textarea.juice-form-control {
+    height: 120px;
+    resize: none;
+}
+
+.juice-submit-btn {
+    background: #000;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.juice-decorative-area {
+    width: 45%;
+    position: relative;
+}
+
+.juice-decorative-image {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+}
+
+.juice-lime {
+    top: 10%;
+    right: 20%;
+}
+
+.juice-bottles {
+    top: 30%;
+    right: 10%;
+}
+
+.juice-berries {
+    bottom: 20%;
+    right: 15%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .juice-blog-card {
+        min-width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .juice-blog-image,
+    .juice-blog-content {
+        width: 100%;
+    }
+
+    .juice-blog-image {
+        height: 200px;
+    }
+
+    .juice-contact-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .juice-contact-content {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .juice-decorative-area {
+        width: 100%;
+        height: 200px;
+        margin-top: 30px;
+    }
+}
+
 
 @media (max-width: 768px) {
     .faq-section {
