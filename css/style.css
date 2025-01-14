@@ -80,7 +80,7 @@ nav {
     color: var(--primary-orange);
 }
 
-.nav-links a:hover .nav-links a::before {
+.nav-links a:hover::before {
     width: 100%;
 }
 
