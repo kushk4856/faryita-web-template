@@ -101,6 +101,26 @@
     .chefs-grid {
         flex-direction: column;
     }
+
+    .chefs_heading p {
+        width: 100%;
+    }
+
+    .chefs_heading {
+        flex-direction: column;
+    }
+
+    .chefs-section {
+        padding: 45px 15px;
+    }
+
+    .chefs-title {
+        text-align: center;
+    }
+
+    /* .juice-blog-section {
+        padding-inline: 20px;
+    } */
 }
 
 @media (max-width: 576px) {

@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+    font-family: 'FontAwesomeBrands';
+    src: url('../Font-Awesome-6-Free-Solid-900.otf') format('opentype');
+}
+
+:root {
+    --primary-green: #87A143;
+    --primary-orange: #FE8F00;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +19,7 @@
 
 /* Top Header */
 .top-header {
-    background: #ff6b00;
+    background: #F76D3C;
     color: white;
     padding: 0.5rem 5%;
     text-align: right;
@@ -51,6 +61,27 @@ nav {
     text-decoration: none;
     color: #333;
     font-weight: 500;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.nav-links a::before {
+    position: absolute;
+    content: '';
+    bottom: -10px;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(to right, var(--primary-orange) 50%, #fff);
+    transition: all .3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+.nav-links a:hover .nav-links a::before {
+    width: 100%;
 }
 
 .nav-icons {
@@ -149,46 +180,108 @@ nav {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
         url("../images/bg-images/h3-slider-01.jpg");
     background-position: center;
     background-size: cover;
-    min-height: 80vh;
+    /* min-height: 80vh; */
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding: 0 5%;
     border-radius: 40px;
     margin-inline: 16px;
     padding-inline: 24px;
+
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 70%;
     color: white;
+    display: flex;
+    position: relative;
+
+}
+
+.hero-content .orange_fruite {
+    position: absolute;
+    bottom: 30px;
+    right: 220px;
+
+}
+
+.hero-content .orange_fruite img {
+    width: 200px;
+}
+
+.left_hero_content {
+    padding-inline: 24px;
+    padding-block: 120px;
+    width: 70%;
+}
+
+.hero-content .person_div {
+    width: 30%;
+    /* height: 300px; */
+    align-self: flex-end;
+    border-radius: 35px;
+    border: 5px solid #FFF;
+
+    background: #FF8F0D;
+    overflow: hidden;
+    margin-bottom: 24px;
+
+}
+
+
+
+.hero-content .person_div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
+    color: #FFF;
+
+    font-family: Anton;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 75px;
+    /* 118.75% */
+    text-transform: uppercase;
     margin-bottom: 1.5rem;
-    line-height: 1.2;
+
 }
 
 .hero p {
-    font-size: 1.1rem;
+    font-size: 15px;
     margin-bottom: 2rem;
     opacity: 0.9;
+    padding-right: 42px;
 }
 
 .shop-juice-btn {
     display: inline-block;
     background: #ffc107;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    color: white;
+    padding: 20px 40px;
+    border-radius: 15px;
+    /* color: white; */
     text-decoration: none;
-    font-weight: bold;
+    color: #000;
+
+    text-align: center;
+    /* Button */
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 13px;
+    /* 72.222% */
+    text-transform: capitalize;
     transition: transform 0.3s;
+    margin-bottom: 24px;
 }
 
 .shop-juice-btn:hover {
@@ -197,7 +290,7 @@ nav {
 
 /* Products Grid */
 .products-section {
-    padding: 5rem 5%;
+    padding: 3rem 5%;
     background: #fff;
 }
 
@@ -205,7 +298,7 @@ nav {
     display: grid;
     grid-template-columns: 350px 1fr;
     gap: 2rem;
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
 }
 
 .juice-card {
@@ -244,19 +337,24 @@ nav {
 
 .juice-item {
     background: #fff;
-    border-radius: 15px;
+    height: 220px;
+    border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     transition: transform 0.3s;
 }
 
-.juice-item:hover {
+.juice-container:hover .juice-item {
     transform: translateY(-5px);
 }
 
+
+
+
 .juice-img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -266,8 +364,21 @@ nav {
 }
 
 .juice-info h3 {
-    color: #333;
+    color: #000;
+    cursor: pointer;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
     margin-bottom: 0.5rem;
+    transition: all .3s ease-in-out;
+}
+
+.juice-container:hover .juice-info h3 {
+    color: #AF5364;
 }
 
 
@@ -297,16 +408,17 @@ nav {
     left: 0;
     transform: translateY(-50%);
     content: '';
-    background-color: #FC6901;
+    background-color: #D04B10;
     width: 100%;
-    height: 70px;
+    height: 100px;
+    border-radius: 20px;
     z-index: -1;
 }
 
 .slide-card_logo {
-    flex: 0 0 24%;
+    flex: 0 0 33.3%;
     /* Show 4 cards at a time */
-    max-width: 24%;
+    max-width: 33.3%;
     background-color: transparent;
     text-align: center;
     display: flex;
@@ -323,7 +435,7 @@ nav {
     margin: 0;
     padding: 0;
     display: block;
-    width: 120px;
+    width: 190px;
 }
 
 .slide-card_logo p {
@@ -338,6 +450,10 @@ nav {
     align-items: center;
 }
 
+.marquee_section {
+    padding-bottom: 3rem;
+}
+
 
 /* Pink Banner Section */
 .pink-banner {
@@ -346,10 +462,10 @@ nav {
     border-radius: 20px;
     /* margin: 2rem 5%; */
     margin-inline: 16px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
     gap: 2rem;
-    min-height: 90vh;
+    /* min-height: 90vh; */
     align-items: center;
     overflow: hidden;
     position: relative;
@@ -362,20 +478,35 @@ nav {
 
 
 .pink-banner-content {
-    max-width: 500px;
+    max-width: 60%;
+}
+
+.pink-banner-content .shop-juice-btn {
+    background: #61355B;
+    color: #fff;
 }
 
 .pink-banner h2 {
-    font-size: 2.8rem;
-    color: #4A154B;
+    color: #61355B;
+
+    /* H1 */
+    font-family: Anton;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px;
+    /* 125% */
+    text-transform: capitalize;
     margin-bottom: 1rem;
-    line-height: 1.2;
 }
 
 .pink-banner p {
     color: #666;
     margin-bottom: 2rem;
-    line-height: 1.6;
+    font-family: Poppins;
+    line-height: 28px;
+    font-size: 14px;
+    padding-right: 120px;
 }
 
 .pink-banner-images {
@@ -507,6 +638,10 @@ nav {
     border: 1px solid #FFB7BB;
 }
 
+.trending-item .add-to-cart-btn:hover~.trending-img-container {
+    background: #FFB7BB;
+}
+
 
 /* product category section =========== */
 
@@ -623,7 +758,7 @@ nav {
 
 .btn {
     display: inline-block;
-    padding: 24px 57px;
+    padding: 20px 57px;
 
     color: #fff;
     text-decoration: none;
@@ -632,6 +767,11 @@ nav {
     margin-bottom: 32px;
     border-radius: 15px;
     background: #3D968C;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
 }
 
 /* FAQ Section */
@@ -748,6 +888,8 @@ nav {
     background-color: #ffd1dc;
     padding: 75px 55px;
     border-radius: 15px;
+    margin-inline: 16px;
+    border-radius: 30px;
 }
 
 .chefs_heading {
@@ -811,8 +953,26 @@ nav {
     height: 100%;
     width: 100%;
     opacity: 0;
+    z-index: -1;
     transition: all .3s ease-in-out;
 }
+
+.chef-card .social_icons {
+    margin-bottom: 24px;
+    overflow: hidden;
+
+}
+
+.chef-card .social_icons img {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+
+}
+
 
 .chef-card:hover {
     box-shadow: rgba(174, 82, 99, 0.4) 5px 5px, rgba(174, 82, 99, 0.3) 10px 10px, rgba(174, 82, 99, 0.2) 15px 15px, rgba(174, 82, 99, 0.1) 20px 20px, rgba(174, 82, 99, 0.05) 25px 25px;
@@ -823,10 +983,11 @@ nav {
     opacity: 1;
 }
 
-.chef-card .social_icons img {
-    width: 30px;
-    height: 30px;
+.chef-card:hover .social_icons img {
+    opacity: 1;
+    cursor: pointer;
 }
+
 
 .chef-image {
     /* width: 120px;
@@ -1039,22 +1200,39 @@ nav {
     padding: 40px;
     position: relative;
     overflow: hidden;
-    min-height: 500px;
+    /* min-height: 600px; */
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
+    background-image: url(../images/bg-images/h3-contact-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 50px;
+    padding-block: 0px;
+
 }
 
 .juice-contact-content {
-    width: 50%;
+    width: 60%;
     position: relative;
     z-index: 2;
+    padding-block: 70px;
+    padding-right: 200px;
 }
 
 .juice-contact-title {
-    font-size: 36px;
+    color: #000;
+
+    /* Main Heading */
+    font-family: Anton;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 55px;
+    /* 91.667% */
+    text-transform: capitalize;
     margin-bottom: 15px;
-    color: black;
-    font-weight: bold;
 }
 
 .juice-contact-subtitle {
@@ -1078,6 +1256,9 @@ nav {
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.9);
     font-size: 15px;
+    height: 45px;
+    border-radius: 10px;
+    background: #FBE6DA;
 }
 
 textarea.juice-form-control {
@@ -1088,13 +1269,18 @@ textarea.juice-form-control {
 .juice-submit-btn {
     background: #000;
     color: white;
-    padding: 12px 30px;
+    padding: 20px 37px;
     border: none;
-    border-radius: 25px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 16px;
     font-weight: bold;
     margin-top: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.juice-submit-btn:hover {
+    transform: translateY(-5px);
 }
 
 .juice-decorative-area {
@@ -1121,6 +1307,256 @@ textarea.juice-form-control {
 .juice-berries {
     bottom: 20%;
     right: 15%;
+}
+
+/* ----footer design--  */
+.main-container {
+    background: var(--primary-green);
+    padding: 20px;
+    position: relative;
+    margin-inline: 16px;
+    border-radius: 30px;
+    overflow: hidden;
+    padding-inline: 70px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding-top: 70px;
+}
+
+
+.content-wrapper .sub_heading {
+    text-align: center;
+    max-width: 50%;
+    margin: auto;
+    color: #fff;
+    margin-bottom: 24px;
+}
+
+.banner-text {
+    color: #FFF;
+    text-align: center;
+
+    /* Main Heading */
+    font-family: Anton;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 55px;
+    /* 91.667% */
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.service-icons {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+.service-item img {
+    width: 50px;
+    /* height: 25.3px; */
+    margin-bottom: 10px;
+}
+
+.footer-main {
+    background: var(--primary-orange);
+    padding: 40px;
+    color: white;
+    border-radius: 20px;
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 64px;
+}
+
+.fruits_icon_1 {
+    position: absolute;
+    bottom: -37px;
+    left: 15%;
+
+}
+
+.fruits_icon_2 {
+    position: absolute;
+    bottom: 20px;
+    right: -56px;
+}
+
+.fruits_icon_3 {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.fruits_icon_4 {
+    position: absolute;
+    top: 0;
+    left: -16px;
+}
+
+.fruits_icon_4 img {
+    width: 412px;
+    /* height: 300px; */
+}
+
+.fruits_icon_1 img,
+.fruits_icon_2 img,
+.fruits_icon_3 img {
+    width: 180px;
+    height: 180px;
+}
+
+.fruits_icon_2 img {
+    transform: rotate(-27deg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr .7fr;
+    gap: 30px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.company-info {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-media a {
+    background: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-media a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.app-stores {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.footer-section p {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.app-stores img {
+    height: 40px;
+}
+
+.decorative-fruits {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 80px;
+    opacity: 0.8;
+}
+
+.watermelon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+}
+
+.payment-methods {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.payment-methods img {
+    height: 30px;
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-icons {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-icons {
+        gap: 20px;
+    }
+
+    .stripe-pattern {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .service-icons {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 /* Responsive Design */

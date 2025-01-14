@@ -1,482 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Juice Website Sections</title>
     <style>
-      /* Unique container class */
-      .juice-blog-container {
-        max-width: 1200px;
-        margin: 0 auto;
+      :root {
+        --primary-green: #608c3c;
+        --primary-orange: #ff8619;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .main-container {
+        background: var(--primary-green);
         padding: 20px;
+        position: relative;
       }
 
-      /* Blog Section */
-      .juice-blog-section {
-        margin-bottom: 50px;
+      .content-wrapper {
+        position: relative;
+        z-index: 1;
       }
 
-      .juice-blog-title {
-        background: #ff8c00;
+      .banner-text {
         color: white;
         text-align: center;
-        padding: 15px;
-        border-radius: 25px;
-        margin-bottom: 20px;
-        font-size: 28px;
+        font-size: 24px;
         font-weight: bold;
+        margin-bottom: 30px;
       }
 
-      /* Custom Carousel Styles */
-      .juice-blog-carousel {
-        position: relative;
-        overflow: hidden;
-        padding-bottom: 40px;
-      }
-
-      .juice-blog-track {
+      .service-icons {
         display: flex;
-        transition: transform 0.5s ease-in-out;
-        gap: 20px;
+        justify-content: center;
+        gap: 80px;
+        margin-bottom: 30px;
       }
 
-      .juice-blog-card {
-        min-width: calc(50% - 10px);
-        display: flex;
-        height: 280px;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .juice-blog-image {
-        width: 50%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .juice-blog-content {
-        width: 50%;
-        padding: 25px;
+      .service-item {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-      }
-
-      .juice-blog-card:nth-child(odd) .juice-blog-content {
-        background: #8bc34a;
-      }
-
-      .juice-blog-card:nth-child(even) .juice-blog-content {
-        background: #e57373;
-      }
-
-      .juice-blog-date {
-        font-size: 14px;
+        align-items: center;
         color: white;
+        font-size: 14px;
+      }
+
+      .service-item img {
+        width: 30px;
         margin-bottom: 10px;
       }
 
-      .juice-blog-heading {
-        font-size: 22px;
-        color: white;
-        margin-bottom: 15px;
-        font-weight: bold;
-        line-height: 1.2;
-      }
-
-      .juice-blog-excerpt {
-        font-size: 14px;
-        color: white;
-        margin-bottom: 20px;
-      }
-
-      .juice-blog-read-more {
-        display: inline-block;
-        background: #ffd700;
-        color: black;
-        padding: 8px 24px;
-        border-radius: 20px;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: bold;
-        align-self: flex-start;
-      }
-
-      /* Custom Dots */
-      .juice-blog-dots {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-      }
-
-      .juice-blog-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: #ddd;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .juice-blog-dot.active {
-        background: #ff8c00;
-      }
-
-      /* Contact Section */
-      .juice-contact-section {
-        background: #ffb300;
-        border-radius: 25px;
+      .footer-main {
+        background: var(--primary-orange);
         padding: 40px;
-        position: relative;
-        overflow: hidden;
-        min-height: 500px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .juice-contact-content {
-        width: 50%;
-        position: relative;
-        z-index: 2;
-      }
-
-      .juice-contact-title {
-        font-size: 36px;
-        margin-bottom: 15px;
-        color: black;
-        font-weight: bold;
-      }
-
-      .juice-contact-subtitle {
-        color: #555;
-        margin-bottom: 30px;
-        font-size: 16px;
-      }
-
-      .juice-contact-form {
-        width: 100%;
-      }
-
-      .juice-form-group {
-        margin-bottom: 15px;
-      }
-
-      .juice-form-control {
-        width: 100%;
-        padding: 12px 15px;
-        border: none;
-        border-radius: 8px;
-        background: rgba(255, 255, 255, 0.9);
-        font-size: 15px;
-      }
-
-      textarea.juice-form-control {
-        height: 120px;
-        resize: none;
-      }
-
-      .juice-submit-btn {
-        background: #000;
         color: white;
-        padding: 12px 30px;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        margin-top: 10px;
-      }
-
-      .juice-decorative-area {
-        width: 45%;
+        border-radius: 20px;
         position: relative;
       }
 
-      .juice-decorative-image {
+      .footer-content {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+        gap: 30px;
+      }
+
+      .footer-section h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: white;
+      }
+
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 10px;
+      }
+
+      .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .company-info {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .social-media {
+        display: flex;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .social-media a {
+        background: white;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .app-stores {
+        display: flex;
+        gap: 10px;
+      }
+
+      .app-stores img {
+        height: 40px;
+      }
+
+      .decorative-fruits {
         position: absolute;
-        width: 120px;
-        height: 120px;
+        bottom: 20px;
+        left: 20px;
+        width: 80px;
+        opacity: 0.8;
       }
 
-      .juice-lime {
-        top: 10%;
-        right: 20%;
+      .watermelon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
       }
 
-      .juice-bottles {
-        top: 30%;
-        right: 10%;
+      .payment-methods {
+        margin-top: 20px;
+        text-align: right;
       }
 
-      .juice-berries {
-        bottom: 20%;
-        right: 15%;
+      .payment-methods img {
+        height: 30px;
       }
 
-      /* Responsive Design */
-      @media (max-width: 992px) {
-        .juice-blog-card {
-          min-width: 100%;
-          height: auto;
+      @media (max-width: 1024px) {
+        .footer-content {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .service-icons {
+          gap: 40px;
+          flex-wrap: wrap;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .service-icons {
+          gap: 20px;
+        }
+
+        .stripe-pattern {
+          width: 100px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+        }
+
+        .service-icons {
           flex-direction: column;
-        }
-
-        .juice-blog-image,
-        .juice-blog-content {
-          width: 100%;
-        }
-
-        .juice-blog-image {
-          height: 200px;
-        }
-
-        .juice-contact-section {
-          flex-direction: column;
-          padding: 30px;
-        }
-
-        .juice-contact-content {
-          width: 100%;
-          margin-bottom: 30px;
-        }
-
-        .juice-decorative-area {
-          width: 100%;
-          height: 200px;
-          margin-top: 30px;
+          align-items: center;
         }
       }
     </style>
   </head>
   <body>
-    <div class="juice-blog-container">
-      <!-- Blog Section -->
-      <section class="juice-blog-section">
-        <h2 class="juice-blog-title">Read Our Latest Blogs</h2>
-        <div class="juice-blog-carousel" id="juiceBlogCarousel">
-          <div class="juice-blog-track" id="juiceBlogTrack">
-            <div class="juice-blog-card">
-              <img
-                src="/api/placeholder/600/400"
-                alt="Orange Juice"
-                class="juice-blog-image"
-              />
-              <div class="juice-blog-content">
-                <div class="juice-blog-date">March 02, 2023</div>
-                <h3 class="juice-blog-heading">
-                  JUICE IS GOOD FOR THE MIND, BODY, AND SOUL
-                </h3>
-                <p class="juice-blog-excerpt">
-                  Fresh fruits and vegetables that fight inflammation help
-                  improve memory...
-                </p>
-                <a href="#" class="juice-blog-read-more">Read More</a>
+    <div class="main-container">
+      <!-- <div class="stripe-pattern"></div> -->
+      <div class="content-wrapper">
+        <div class="banner-text">
+          Subscribe For A Good Deal Inside & Outside
+        </div>
+
+        <div class="service-icons">
+          <div class="service-item">
+            <img src="fast-delivery.svg" alt="Fast Delivery" />
+            <span>Fast Delivery</span>
+          </div>
+          <div class="service-item">
+            <img src="delivery-date.svg" alt="Delivery Date" />
+            <span>Delivery Date</span>
+          </div>
+          <div class="service-item">
+            <img src="secure-payment.svg" alt="Secure Payments" />
+            <span>Secure Payments</span>
+          </div>
+          <div class="service-item">
+            <img src="customer-service.svg" alt="24/7 Customer Service" />
+            <span>24/7 Customer Service</span>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-content">
+            <div class="footer-section company-info">
+              <div class="logo">Faryita</div>
+              <p>
+                Address: 2548, North Aberdeen Street<br />
+                London, UK 198105
+              </p>
+              <p>Call: (+44) 123 456 789</p>
+              <p>Email: info@faryita.com</p>
+              <div class="social-media">
+                <a href="#"><img src="facebook.svg" alt="Facebook" /></a>
+                <a href="#"><img src="twitter.svg" alt="Twitter" /></a>
+                <a href="#"><img src="instagram.svg" alt="Instagram" /></a>
+                <a href="#"><img src="linkedin.svg" alt="LinkedIn" /></a>
               </div>
+              <div class="app-stores">
+                <img src="google-play.png" alt="Get it on Google Play" />
+                <img src="app-store.png" alt="Download on App Store" />
+              </div>
+              <img src="fruits.svg" alt="" class="decorative-fruits" />
             </div>
-            <div class="juice-blog-card">
-              <img
-                src="/api/placeholder/600/400"
-                alt="Red Smoothie"
-                class="juice-blog-image"
-              />
-              <div class="juice-blog-content">
-                <div class="juice-blog-date">March 15, 2023</div>
-                <h3 class="juice-blog-heading">
-                  AN APPLE A DAY KEEPS EVERYONE AWAY
-                </h3>
-                <p class="juice-blog-excerpt">
-                  Promotes strong digestion, fights inflammation, helps improve
-                  memory...
-                </p>
-                <a href="#" class="juice-blog-read-more">Read More</a>
-              </div>
+
+            <div class="footer-section">
+              <h3>Get in Touch</h3>
+              <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Latest Posts</a></li>
+              </ul>
             </div>
-            <div class="juice-blog-card">
-              <img
-                src="/api/placeholder/600/400"
-                alt="Green Smoothie"
-                class="juice-blog-image"
-              />
-              <div class="juice-blog-content">
-                <div class="juice-blog-date">March 20, 2023</div>
-                <h3 class="juice-blog-heading">GREEN SMOOTHIE BENEFITS</h3>
-                <p class="juice-blog-excerpt">
-                  Discover the amazing benefits of green smoothies...
-                </p>
-                <a href="#" class="juice-blog-read-more">Read More</a>
-              </div>
+
+            <div class="footer-section">
+              <h3>Shop</h3>
+              <ul>
+                <li><a href="#">Juices</a></li>
+                <li><a href="#">Smoothies</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Health Drink</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>Useful Links</h3>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Shipping & Returns</a></li>
+                <li><a href="#">Track Order</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3>Services</h3>
+              <ul>
+                <li><a href="#">Orders</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">Account Details</a></li>
+                <li><a href="#">24/7 Care</a></li>
+              </ul>
             </div>
           </div>
-          <div class="juice-blog-dots" id="juiceBlogDots"></div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section class="juice-contact-section">
-        <div class="juice-contact-content">
-          <h2 class="juice-contact-title">Don't Be Shy, Say Hi!</h2>
-          <p class="juice-contact-subtitle">
-            Have questions about our products? Want to collaborate? Drop us a
-            message!
-          </p>
-
-          <form class="juice-contact-form" id="juiceContactForm">
-            <div class="juice-form-group">
-              <input
-                type="text"
-                class="juice-form-control"
-                placeholder="Name"
-              />
-            </div>
-            <div class="juice-form-group">
-              <input
-                type="email"
-                class="juice-form-control"
-                placeholder="Email"
-              />
-            </div>
-            <div class="juice-form-group">
-              <input
-                type="tel"
-                class="juice-form-control"
-                placeholder="Phone Number"
-              />
-            </div>
-            <div class="juice-form-group">
-              <textarea
-                class="juice-form-control"
-                placeholder="Message"
-              ></textarea>
-            </div>
-            <button type="submit" class="juice-submit-btn">Send Request</button>
-          </form>
+          <img src="watermelon.svg" alt="" class="watermelon" />
         </div>
 
-        <div class="juice-decorative-area">
-          <img
-            src="/api/placeholder/120/120"
-            alt="Lime"
-            class="juice-decorative-image juice-lime"
-          />
-          <img
-            src="/api/placeholder/120/120"
-            alt="Bottles"
-            class="juice-decorative-image juice-bottles"
-          />
-          <img
-            src="/api/placeholder/120/120"
-            alt="Berries"
-            class="juice-decorative-image juice-berries"
-          />
+        <div class="payment-methods">
+          <img src="payment-methods.png" alt="Payment Methods" />
         </div>
-      </section>
+      </div>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Initialize carousel with unique IDs
-        const juiceCarouselInit = () => {
-          const track = document.getElementById("juiceBlogTrack");
-          const cards = track.querySelectorAll(".juice-blog-card");
-          const dotsContainer = document.getElementById("juiceBlogDots");
-          const cardWidth = cards[0].offsetWidth + 20; // Including gap
-          let currentIndex = 0;
-          let startX,
-            isDragging = false,
-            startPos;
-
-          // Calculate number of slides to show
-          const slidesPerView = window.innerWidth > 992 ? 2 : 1;
-          const totalSlides = Math.ceil(cards.length / slidesPerView);
-
-          // Create dots
-          for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement("div");
-            dot.classList.add("juice-blog-dot");
-            if (i === 0) dot.classList.add("active");
-            dot.addEventListener("click", () => goToSlide(i));
-            dotsContainer.appendChild(dot);
-          }
-
-          function updateDots() {
-            const dots = dotsContainer.querySelectorAll(".juice-blog-dot");
-            dots.forEach((dot, index) => {
-              dot.classList.toggle("active", index === currentIndex);
-            });
-          }
-
-          function goToSlide(index) {
-            currentIndex = index;
-            const offset = -index * (cardWidth * slidesPerView);
-            track.style.transform = `translateX(${offset}px)`;
-            updateDots();
-          }
-
-          // Auto-play functionality
-          let autoplayInterval = setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            goToSlide(currentIndex);
-          }, 3000);
-
-          // Touch events for mobile
-          track.addEventListener("touchstart", (e) => {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-            startPos = -currentIndex * (cardWidth * slidesPerView);
-            clearInterval(autoplayInterval);
-          });
-
-          track.addEventListener("touchmove", (e) => {
-            if (!isDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diff = currentX - startX;
-            track.style.transform = `translateX(${startPos + diff}px)`;
-          });
-
-          track.addEventListener("touchend", (e) => {
-            isDragging = false;
-            const endX = e.changedTouches[0].clientX;
-            const diff = endX - startX;
-
-            if (Math.abs(diff) > 50) {
-              if (diff > 0 && currentIndex > 0) {
-                currentIndex--;
-              } else if (diff < 0 && currentIndex < totalSlides - 1) {
-                currentIndex++;
-              }
-            }
-
-            goToSlide(currentIndex);
-            autoplayInterval = setInterval(() => {
-              currentIndex = (currentIndex + 1) % totalSlides;
-              goToSlide(currentIndex);
-            }, 3000);
-          });
-
-          return { track, cardWidth, slidesPerView };
-        };
-
-        // Initialize carousel
-        const carousel = juiceCarouselInit();
-
-        // Window resize handler
-        let resizeTimer;
-        window.addEventListener("resize", () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            const newSlidesPerView = window.innerWidth > 992 ? 2 : 1;
-            if (newSlidesPerView !== carousel.slidesPerView) {
-              location.reload();
-            }
-          }, 250);
-        });
-      });
-    </script>
   </body>
 </html>
