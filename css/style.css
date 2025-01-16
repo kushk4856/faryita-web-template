@@ -8,6 +8,10 @@
 :root {
     --primary-green: #87A143;
     --primary-orange: #FE8F00;
+    --light-purple: #b58ee0;
+    --light-pink: #f8e1e1;
+    --btn-purple: rgb(127, 96, 205);
+    --primary-purple: #53218B;
 }
 
 * {
@@ -19,7 +23,8 @@
 
 /* Top Header */
 .top-header {
-    background: #F76D3C;
+    /* background: #F76D3C; */
+    background: var(--primary-purple);
     color: white;
     padding: 1rem 5%;
     /* text-align: right; */
@@ -101,12 +106,13 @@ nav .logo img {
     left: 0;
     height: 3px;
     width: 0%;
-    background: linear-gradient(to right, var(--primary-orange) 50%, #fff);
+    background: linear-gradient(to right, var(--primary-purple) 50%, #fff);
     transition: all .3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: var(--primary-orange);
+    /* color: var(--primary-orange); */
+    color: var(--primary-purple);
 }
 
 .nav-links a:hover::before {
@@ -181,7 +187,8 @@ nav .logo img {
 }
 
 .get-in-touch {
-    background: #ffc107;
+    /* background: #ffc107; */
+    background: var(--btn-purple);
     padding: 20px 40px;
     border-radius: 15px;
     color: white !important;
@@ -355,12 +362,13 @@ nav .logo img {
 
 .shop-juice-btn {
     display: inline-block;
-    background: #ffc107;
+    /* background: #ffc107; */
+    background: var(--btn-purple);
     padding: 20px 40px;
     border-radius: 15px;
-    /* color: white; */
+    color: white;
     text-decoration: none;
-    color: #000;
+    /* color: #000; */
 
     text-align: center;
     /* Button */
@@ -427,12 +435,16 @@ nav .logo img {
 }
 
 .juice-item {
-    background: #fff;
+    /* background: #fff; */
+    background-color: #f8e1e1;
     height: 220px;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s;
 }
 
@@ -444,8 +456,8 @@ nav .logo img {
 
 
 .juice-img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     object-fit: cover;
 }
 
@@ -501,7 +513,8 @@ nav .logo img {
     left: 0;
     transform: translateY(-50%);
     content: '';
-    background-color: #D04B10;
+    /* background-color: #D04B10; */
+    background-color: var(--primary-purple);
     width: 100%;
     height: 100px;
     border-radius: 20px;
@@ -575,12 +588,14 @@ nav .logo img {
 }
 
 .pink-banner-content .shop-juice-btn {
-    background: #61355B;
+    /* background: #61355B; */
+    background: var(--btn-purple);
     color: #fff;
 }
 
 .pink-banner h2 {
-    color: #61355B;
+    /* color: #61355B; */
+    color: var(--primary-purple);
 
     /* H1 */
     font-family: Anton;
@@ -631,7 +646,8 @@ nav .logo img {
 }
 
 .trending-header {
-    background: #C0DBF7;
+    /* background: #C0DBF7; */
+    background: #8E63BF;
     padding: 1rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -647,7 +663,8 @@ nav .logo img {
 }
 
 .trending-header h2 {
-    color: #4574A5;
+    /* color: #4574A5; */
+    color: #fff;
 
     font-family: Anton;
     font-size: 60px;
@@ -662,7 +679,7 @@ nav .logo img {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 .trending-item {
@@ -675,11 +692,16 @@ nav .logo img {
     justify-content: center;
     flex-direction: column;
     gap: 24px;
+    cursor: pointer;
 }
 
-/* .trending-item:hover {
-    transform: translateY(-5px);
-} */
+.trending-item:hover .trending-img-container img {
+    transform: scale(1.1);
+}
+
+.trending-item h3:hover {
+    color: var(--primary-orange);
+}
 
 .trending-img-container {
     /* width: 150px; */
@@ -698,12 +720,14 @@ nav .logo img {
     width: 80%;
     height: 80%;
     object-fit: contain;
+    transition: all .3s ease-in-out;
 }
 
 .trending-item h3 {
     font-size: 1.1rem;
     color: #333;
     /* margin-bottom: 0.5rem; */
+    transition: all .3s ease-in-out;
 }
 
 .trending-item .price {
@@ -776,7 +800,7 @@ nav .logo img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    margin-block: 50px;
+    margin-bottom: 50px;
     margin-inline: 16px;
 }
 
@@ -839,6 +863,11 @@ nav .logo img {
     border-right: 1px dashed #fff;
 }
 
+.feature-item p {
+    font-size: 21px;
+    font-weight: 600;
+}
+
 .feature-item:last-child {
     border-right: none;
 }
@@ -860,7 +889,8 @@ nav .logo img {
     margin-top: 20px;
     margin-bottom: 50px;
     border-radius: 15px;
-    background: #3D968C;
+    /* background: #3D968C; */
+    background: var(--btn-purple);
     transition: all .3s ease-in-out;
 }
 
@@ -897,7 +927,8 @@ nav .logo img {
 }
 
 .section-title {
-    color: #C7655D;
+    /* color: #C7655D; */
+    color: var(--primary-purple);
 
 
     font-family: Anton;
@@ -1161,6 +1192,7 @@ nav .logo img {
 
 .juice-blog-card {
     min-width: calc(50% - 10px);
+    width: 50%;
     display: flex;
     /* height: 450px; */
     border-radius: 15px;
@@ -1405,7 +1437,8 @@ textarea.juice-form-control {
 
 /* ----footer design--  */
 .main-container {
-    background: var(--primary-green);
+    /* background: var(--primary-green); */
+    background: var(--light-purple);
     padding: 20px;
     position: relative;
     margin-inline: 16px;
@@ -1467,7 +1500,8 @@ textarea.juice-form-control {
 }
 
 .footer-main {
-    background: var(--primary-orange);
+    /* background: var(--primary-orange); */
+    background: var(--primary-purple);
     padding: 40px;
     color: white;
     border-radius: 20px;
