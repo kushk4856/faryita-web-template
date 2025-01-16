@@ -97,11 +97,11 @@ const sliderLogo = document.getElementById("slider_logo");
 console.log(sliderLogo);
 // const sliderLogo2 = document.getElementById("slider_logo2");
 const cardWidthLogo = sliderLogo.children[0].offsetWidth + 20;
-const intervalSpeed = 2000;
+// const intervalSpeed = 2000;
 
 function startSlider(slider, direction) {
   let position = 0;
-  const speed = 1.5;
+  const speed = 1.7;
   let isAnimating = true;
 
   function slide() {
@@ -264,4 +264,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }, 250);
   });
+});
+
+// JavaScript for handling dropdowns
+function toggleSection(sectionId) {
+  const content = document.getElementById(sectionId);
+  const arrow = content.parentElement.querySelector(".dropdown-arrow");
+
+  // Toggle active class on content
+  content.classList.toggle("active");
+
+  // Toggle arrow rotation
+  arrow.classList.toggle("active");
+
+  // Close other dropdowns
+  const allDropdowns = document.querySelectorAll(".dropdown-content");
+  const allArrows = document.querySelectorAll(".dropdown-arrow");
+
+  allDropdowns.forEach((dropdown) => {
+    if (dropdown.id !== sectionId && dropdown.classList.contains("active")) {
+      dropdown.classList.remove("active");
+    }
+  });
+
+  allArrows.forEach((arrow) => {
+    if (!arrow.parentElement.parentElement.querySelector(`#${sectionId}`)) {
+      arrow.classList.remove("active");
+    }
+  });
+}
+
+// Optional: Close dropdowns when clicking outside
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".dropdown-section")) {
+    const allDropdowns = document.querySelectorAll(".dropdown-content");
+    const allArrows = document.querySelectorAll(".dropdown-arrow");
+
+    allDropdowns.forEach((dropdown) => dropdown.classList.remove("active"));
+    allArrows.forEach((arrow) => arrow.classList.remove("active"));
+  }
 });

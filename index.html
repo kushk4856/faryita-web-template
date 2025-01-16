@@ -16,9 +16,27 @@
   <body>
     <!-- Top Header -->
     <div class="top-header">
-      <a href="#"><i class="fas fa-envelope"></i> support@email.com</a>
-      <a href="#"><i class="fas fa-phone"></i> +1 234 567 890</a>
-      <a href="#"><i class="fas fa-user"></i> Login</a>
+      <div class="top_social_icons">
+        <img src="./images/bg-images/instagram.png" alt="" />
+        <img src="./images/bg-images/facebook-app-symbol.png" alt="" />
+        <img src="./images/bg-images/youtube (1).png  " alt="" />
+        <img src="./images/bg-images/twitter.png" alt="" />
+      </div>
+      <p class="top_text">view our all properties! FOR MORE INFO CLICK HERE</p>
+      <div class="right_top_div">
+        <div class="email_container">
+          <img src="./images/bg-images/email.png" alt="" />
+          <span>Juicedrink.com</span>
+        </div>
+        <div class="countary">
+          <p>USD</p>
+          <img src="images/bg-images/down-arrow.png" width="15px" alt="" />
+        </div>
+        <div class="countary">
+          <p>English</p>
+          <img src="images/bg-images/down-arrow.png" width="15px" alt="" />
+        </div>
+      </div>
     </div>
 
     <!-- Main Navigation -->
@@ -35,7 +53,9 @@
         <a href="#"><i class="fas fa-search"></i></a>
         <a href="#"><i class="fas fa-heart"></i></a>
         <a href="#"><i class="fas fa-shopping-cart"></i></a>
-        <a href="#contact" class="get-in-touch">Get In Touch</a>
+        <a style="margin-left: 16px" href="#contact" class="get-in-touch"
+          >Get In Touch</a
+        >
         <button class="hamburger">
           <i class="fas fa-bars"></i>
         </button>
@@ -622,7 +642,6 @@
       <div class="fruits_icon_4">
         <img src="./images/fruits/Footer-3-Vector.png" alt="" />
       </div>
-      <!-- <div class="stripe-pattern"></div> -->
       <div class="content-wrapper">
         <div class="banner-text">
           Subscribe For A Good Deal Inside & Outside
@@ -663,6 +682,7 @@
           </div>
 
           <div class="footer-content">
+            <!-- Company Info Section -->
             <div class="footer-section company-info">
               <div class="logo">
                 <img src="./images/bg-images/logo-new.png" alt="" />
@@ -682,7 +702,6 @@
                 <a href="#"
                   ><img src="./images/icons/facebook.png" alt="Facebook"
                 /></a>
-
                 <a href="#"
                   ><img src="./images/icons/instagram.png" alt="Instagram"
                 /></a>
@@ -691,6 +710,7 @@
               <img src="fruits.svg" alt="" class="decorative-fruits" />
             </div>
 
+            <!-- Get in Touch Section -->
             <div class="footer-section">
               <h3>Get in Touch</h3>
               <ul>
@@ -713,9 +733,13 @@
               </div>
             </div>
 
-            <div class="footer-section">
-              <h3>Shop</h3>
-              <ul>
+            <!-- Shop Section with Dropdown -->
+            <div class="footer-section dropdown-section">
+              <div class="section-header" onclick="toggleSection('shop')">
+                <h3>Shop</h3>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <ul class="dropdown-content" id="shop">
                 <li><a href="#">Juices</a></li>
                 <li><a href="#">Supplements</a></li>
                 <li><a href="#">Pantry</a></li>
@@ -724,9 +748,16 @@
               </ul>
             </div>
 
-            <div class="footer-section">
-              <h3>Useful Links</h3>
-              <ul>
+            <!-- Useful Links Section with Dropdown -->
+            <div class="footer-section dropdown-section">
+              <div
+                class="section-header"
+                onclick="toggleSection('useful-links')"
+              >
+                <h3>Useful Links</h3>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <ul class="dropdown-content" id="useful-links">
                 <li><a href="#">Contact us</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Shipping & Returns</a></li>
@@ -735,9 +766,13 @@
               </ul>
             </div>
 
-            <div class="footer-section">
-              <h3>Services</h3>
-              <ul>
+            <!-- Services Section with Dropdown -->
+            <div class="footer-section dropdown-section">
+              <div class="section-header" onclick="toggleSection('services')">
+                <h3>Services</h3>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+              <ul class="dropdown-content" id="services">
                 <li><a href="#">Orders</a></li>
                 <li><a href="#">Downloads</a></li>
                 <li><a href="#">Account Details</a></li>
@@ -748,10 +783,20 @@
           </div>
           <img src="watermelon.svg" alt="" class="watermelon" />
         </div>
-
-        <div class="payment-methods">
-          <img src="payment-methods.png" alt="Payment Methods" />
+      </div>
+    </div>
+    <div class="payment-methods">
+      <p>© 2024 juices. All Rights Reserved.</p>
+      <div class="payment_icons">
+        <div class="icon"><img src="./images/icons/visa.png" alt="" /></div>
+        <div class="icon">
+          <img src="./images/icons/master-card.png" alt="" />
         </div>
+        <div class="icon"><img src="./images/icons/paypal.png" alt="" /></div>
+        <div class="icon"><img src="./images/icons/skrill.png" alt="" /></div>
+        <div class="icon"><img src="./images/icons/pyoneer.png" alt="" /></div>
+        <div class="icon"><img src="./images/icons/amazon.png" alt="" /></div>
+        <div class="icon"><img src="./images/icons/g-pay.png" alt="" /></div>
       </div>
     </div>
   </body>
