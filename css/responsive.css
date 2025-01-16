@@ -447,7 +447,9 @@
         font-size: 24px;
     }
 
-    .slider_logo {}
+    .icons_extra {
+        display: none;
+    }
 
     .hero-content .person_div {
         width: 60%;
