@@ -76,6 +76,10 @@ nav {
     color: #ff6b00;
 }
 
+nav .logo img {
+    width: 85px;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -266,7 +270,7 @@ nav {
 /* Hero Section */
 .hero {
     background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
-        url("../images/bg-images/h3-slider-01.jpg");
+        url("../images/hero-section.webp");
     background-position: center;
     background-size: cover;
     /* min-height: 80vh; */
@@ -316,6 +320,7 @@ nav {
     background: #FF8F0D;
     overflow: hidden;
     margin-bottom: 24px;
+    /* display: inline; */
 
 }
 
@@ -545,7 +550,7 @@ nav {
 
 /* Pink Banner Section */
 .pink-banner {
-    background: #FFB7BB;
+    background: #F8E1E1;
     padding: 4rem 5%;
     border-radius: 20px;
     /* margin: 2rem 5%; */
@@ -557,7 +562,7 @@ nav {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background-image: url(../images/bg-images/pink-banner.png);
+    background-image: url(../images/bg-images/pink-banner.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -764,10 +769,10 @@ nav {
 /* ---info section --  */
 /* Info Section */
 .info-section {
-    background-color: #83C5BE;
+    background-color: #382567;
     /* padding: 40px 20px; */
     border-radius: 30px;
-    background-image: url(../images/avatar-2.png);
+    background-image: url(../images/bg-images/bg.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -793,18 +798,19 @@ nav {
     /* flex: 2; */
     /* min-width: 280px; */
     text-align: center;
-    width: 85%;
+    width: 100%;
 }
 
 .info-details h2 {
     color: #FFF;
 
     font-family: Anton;
-    font-size: 60px;
+    font-size: 50px;
     font-style: normal;
     font-weight: 400;
     line-height: 55px;
-
+    max-width: 800px;
+    margin: auto;
     text-transform: capitalize;
     padding-block: 50px;
 }
@@ -838,8 +844,8 @@ nav {
 }
 
 .feature-icon {
-    width: 57px;
-    height: 77px;
+    width: 150px;
+    height: 150px;
     /* height: px; */
     margin-bottom: 10px;
 }
@@ -1522,6 +1528,7 @@ textarea.juice-form-control {
     margin-bottom: 10px;
     text-transform: uppercase;
     color: white;
+    /* font-family: Anton; */
 }
 
 .footer-section ul {
