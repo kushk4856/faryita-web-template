@@ -228,13 +228,32 @@
         font-size: 50px;
     }
 
+    .juice-contact-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .juice-blog-section {
         padding-inline: 0px;
+    }
+
+    .juice-blog-content {
+        padding: 8px;
     }
 
     .juice-contact-content {
         padding-right: 0px;
         padding-block: 40px;
+        padding-inline: 0px;
+    }
+
+    .juice-contact-title {
+        text-align: center;
+    }
+
+    .juice-contact-subtitle {
+        text-align: center;
     }
 
     .main-container {
@@ -263,6 +282,10 @@
 
     .footer-main {
         padding-inline: 16px;
+    }
+
+    .juice-blog-image {
+        height: 200px;
     }
 
 }
